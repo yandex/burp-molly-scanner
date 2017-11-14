@@ -1,0 +1,10 @@
+package com.yandex.burp.extensions.modifiers;
+
+import burp.IHttpRequestResponse;
+
+/**
+ * Created by ezaitov on 08.02.2017.
+ */
+public interface IMollyModifier {
+    public void processHttpMessage(int toolFlag, boolean messageIsRequest, IHttpRequestResponse messageInfo);
+}

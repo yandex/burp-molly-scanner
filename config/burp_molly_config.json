@@ -1,0 +1,74 @@
+{
+  "burp-molly-pack": {
+    "activePluginsEnable": [
+      "CRLFPlugin",
+      "HttPoxyPlugin",
+      "YaExpressExceptionPlugin",
+      "YaExpressRedirectPlugin",
+      "JsonpPlugin",
+      "XXEPlugin",
+      "YaSSRFPlugin",
+      "WebsocketOriginPlugin",
+      "RubySessionDefaultSecretDetectorPlugin",
+      "YaXFFPlugin"
+    ],
+    "passivePluginsEnable": [
+      "ClickJackingPlugin",
+      "ContentSniffingPlugin",
+      "XXssProtectionPlugin"
+    ],
+    "ClickJackingPlugin": {
+      "ignoreCodes": [
+        404,
+        301,
+        302,
+        500,
+        503,
+        502,
+        403,
+        405,
+        400,
+        304,
+        504,
+        414
+      ]
+    },
+    "ContentSniffingPlugin": {
+      "ignoreCodes": [
+        404,
+        403,
+        301,
+        302,
+        405,
+        400,
+        304,
+        401,
+        502,
+        504,
+        503,
+        414,
+        500
+      ]
+    }
+  },
+  "burp-molly-scanner": {
+    "report_path": "/tmp/out.xml",
+    "initial_url": "https://example.com/",
+    "scan_timeout": 45,
+    "max_issue_samples": 11,
+    "user_agent": "fake user-agent",
+    "auth": {
+        "auth_provider": "BASIC",
+        "auth_schema": "",
+        "auth_host": "",
+        "auth_username": "",
+        "auth_password": "base64encoded"
+    },
+    "ignore_issues": [16777472, 5243904,6292736,6291968,7340288,6292992,8389120,16777472],
+    "static_file_extensions": ["js", "png", "gif", "css", "jpg", "jpeg", "ico", "docx", "doc", "exe", "pdf", "xls", "ico", "pkg", "zip"],
+    "crossdomain_js_whitelist": ["yastatic.net", "mc.yandex.ru"],
+    "public_cors_whitelist": ["yastatic.net", "mc.yandex.ru"],
+    "proxy_domain_blacklist": ["mc.yandex.ru", "bs.yandex.ru"],
+    "crossdomain_xml_whitelist": ["yastatic.net", "mc.yandex.ru", "bs.yandex.ru"]
+  }
+}
